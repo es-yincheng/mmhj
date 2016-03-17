@@ -12,5 +12,6 @@
 #import "NSLogDefine.h"
 #import "Network.h"
 #import "Category.h"
-
+#import "Common.h"
+#import "BaseViewController.h"
 #endif /* Base_h */

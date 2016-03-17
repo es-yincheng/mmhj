@@ -10,7 +10,7 @@
 #define NSLogDefine_h
 
 
-#define Dedug 0
+#define Dedug 1
 
 // 日志打印
 #if Dedug

@@ -141,7 +141,7 @@
         <!--首页-->
         <scene sceneID="Aos-3k-vSt">
             <objects>
-                <viewController id="UdB-5G-0sb" sceneMemberID="viewController">
+                <viewController id="UdB-5G-0sb" customClass="HomeVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KoW-uw-Gpl"/>
                         <viewControllerLayoutGuide type="bottom" id="Qok-1d-LvB"/>
