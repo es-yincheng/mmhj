@@ -32,9 +32,9 @@
 -(void)createUI
 {
     NSLog(@"开始创建ui！");
-    
-    
-    
+
+
+
 }
 
 -(void)addUI
@@ -96,9 +96,9 @@
     for (int i=0; i<activitysArray.count; i++) {
         NSDictionary *dict = [activitysArray objectAtYCIndex:i];
         UIButton *bt = [[UIButton alloc] initWithFrame:CGRectMake(SCRENW/activitysArray.count*i, NAVH+260*SCRENW/640, SCRENW/activitysArray.count, SCRENW/activitysArray.count*9/10)];
-//        [bt setBackgroundImage:[UIImage imageNamed:[dict objectForYCKey:@"pic"]] forState:UIControlStateNormal];
+        //        [bt setBackgroundImage:[UIImage imageNamed:[dict objectForYCKey:@"pic"]] forState:UIControlStateNormal];
         [bt setImage:[UIImage imageNamed:[dict objectForKey:@"pic"]] forState:UIControlStateNormal];
-//        [bt setTitle:[dict objectForYCKey:@"name"] forState:UIControlStateNormal];
+        //        [bt setTitle:[dict objectForYCKey:@"name"] forState:UIControlStateNormal];
         UILabel *nameLb = [[UILabel alloc] initWithFrame:CGRectMake(SCRENW/activitysArray.count*i, CGRectGetMaxY(bt.frame), SCRENW/activitysArray.count, 30)];
         nameLb.text = [dict objectForYCKey:@"name"];
         nameLb.textAlignment = NSTextAlignmentCenter;
@@ -132,7 +132,7 @@
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    
+
 }
 
 #pragma mark banner相关
@@ -144,13 +144,15 @@
 
 #pragma mark -- 显示广告
 - (void)showAdvertising{
-    
+
     //更新
     //加入数据
-    NSArray *tempmarry = @[@{@"pic":@"http://ftp.darenbiji.com//advertisement/20160312/30396c53-7e07-4331-b472-a09543d30c50.png"},@{@"pic":@"http://ftp.darenbiji.com//advertisement/20160312/53f60f17-4b4f-4941-a7cc-411ba9d92d7a.png"}];
+    NSArray *tempmarry = @[
+                           @{@"pic":@"http://ftp.darenbiji.com//advertisement/20160312/30396c53-7e07-4331-b472-a09543d30c50.png"},
+                           @{@"pic":@"http://ftp.darenbiji.com//advertisement/20160312/53f60f17-4b4f-4941-a7cc-411ba9d92d7a.png"}];
     self.banner.pics = tempmarry;
     [self.banner upDate];
-    
+
 }
 
 #pragma mark -- 广告点击事件 点击广告事件
@@ -228,7 +230,9 @@
 -(NSArray *)ActivitysArray
 {
     if (!_ActivitysArray) {
-        _ActivitysArray = @[@{@"pic":@"near_activity",@"name":@"附件活动"},@{@"name":@"特惠活动",@"pic":@"discount_activity"},@{@"name":@"福利闪购",@"pic":@"quickly_buy"}];
+        _ActivitysArray = @[@{@"pic":@"near_activity",@"name":@"附件活动"},
+                            @{@"name":@"特惠活动",@"pic":@"discount_activity"},
+                            @{@"name":@"福利闪购",@"pic":@"quickly_buy"}];
     }
     return _ActivitysArray;
 }
@@ -236,10 +240,10 @@
 -(UICollectionView *)productsCollectinoView
 {
     if (!_productsCollectinoView) {
-//        _productsCollectinoView = [[UICollectionView alloc] init];
-//        _productsCollectinoView.delegate = self;
-        
-        
+        //        _productsCollectinoView = [[UICollectionView alloc] init];
+        //        _productsCollectinoView.delegate = self;
+
+
         //两个collecion
         CGSize itemSize = CGSizeMake(SCRENW/2, SCRENW/2*0.5-5);
         UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
@@ -249,13 +253,13 @@
         _productsCollectinoView.backgroundColor = [UIColor whiteColor];
         _productsCollectinoView.dataSource = self;
         _productsCollectinoView.delegate = self;
-//        _productsCollectinoView.scrollEnabled = YES;
-//        _productsCollectinoView.pagingEnabled = YES;
-//        _productsCollectinoView.showsHorizontalScrollIndicator = NO;
+        //        _productsCollectinoView.scrollEnabled = YES;
+        //        _productsCollectinoView.pagingEnabled = YES;
+        //        _productsCollectinoView.showsHorizontalScrollIndicator = NO;
         _productsCollectinoView.tag =1;
         [_productsCollectinoView registerClass:[ProductsCell class] forCellWithReuseIdentifier:@"ProductsCell"];
-//        _productsCollectinoView.userInteractionEnabled = YES;
-//        [View2 addSubview:_userCollection];
+        //        _productsCollectinoView.userInteractionEnabled = YES;
+        //        [View2 addSubview:_userCollection];
     }
     return _productsCollectinoView;
 }

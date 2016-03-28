@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -149,7 +151,34 @@
                     <view key="view" contentMode="scaleToFill" id="NRp-H9-E92">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xIq-qf-YqR">
+                                <rect key="frame" x="-4" y="64" width="383" height="554"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thF-NW-bCM">
+                                        <rect key="frame" x="0.0" y="0.0" width="383" height="554"/>
+                                        <color key="backgroundColor" red="1" green="0.4071502285860763" blue="0.1942288147056932" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="thF-NW-bCM" secondAttribute="height" multiplier="414:623" constant="14.852327447833034" id="D5I-4E-X3X"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="thF-NW-bCM" firstAttribute="leading" secondItem="xIq-qf-YqR" secondAttribute="leading" id="3Sb-lC-WAy"/>
+                                    <constraint firstItem="thF-NW-bCM" firstAttribute="top" secondItem="xIq-qf-YqR" secondAttribute="top" id="Fpa-Mj-MqR"/>
+                                    <constraint firstItem="thF-NW-bCM" firstAttribute="centerX" secondItem="xIq-qf-YqR" secondAttribute="centerX" id="MJv-0J-yEn"/>
+                                    <constraint firstAttribute="bottom" secondItem="thF-NW-bCM" secondAttribute="bottom" id="n5S-qu-XWM"/>
+                                    <constraint firstAttribute="trailing" secondItem="thF-NW-bCM" secondAttribute="trailing" id="w6j-GY-Hr7"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="xIq-qf-YqR" secondAttribute="trailing" constant="-20" id="daj-r5-eoT"/>
+                            <constraint firstItem="xIq-qf-YqR" firstAttribute="leading" secondItem="NRp-H9-E92" secondAttribute="leadingMargin" constant="-20" id="jep-x4-jVB"/>
+                            <constraint firstItem="xIq-qf-YqR" firstAttribute="top" secondItem="KoW-uw-Gpl" secondAttribute="bottom" id="kWa-Gx-ar3"/>
+                            <constraint firstItem="Qok-1d-LvB" firstAttribute="top" secondItem="xIq-qf-YqR" secondAttribute="bottom" id="sGm-SM-l5f"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="首页" id="TWh-qB-tna">
                         <barButtonItem key="backBarButtonItem" title=" " id="eTo-o2-hjG"/>
@@ -158,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BF1-T1-HLy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="707.5" y="117.5"/>
+            <point key="canvasLocation" x="715.5" y="117.5"/>
         </scene>
         <!--商城-->
         <scene sceneID="ZPG-KL-T3G">
@@ -193,12 +222,41 @@
                     <view key="view" contentMode="scaleToFill" id="sqg-Ja-App">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RaX-sk-i3h">
+                                <rect key="frame" x="164" y="310.5" width="46" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RaX-sk-i3h" secondAttribute="height" multiplier="1:1" id="WOx-wC-r0f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hrn-sc-gPZ">
+                                <rect key="frame" x="26" y="319" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LLj-SO-Ksp">
+                                <rect key="frame" x="303" y="318" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LLj-SO-Ksp" firstAttribute="height" secondItem="Hrn-sc-gPZ" secondAttribute="height" id="0mU-lS-XpZ"/>
+                            <constraint firstItem="RaX-sk-i3h" firstAttribute="centerX" secondItem="sqg-Ja-App" secondAttribute="centerX" id="725-wD-qyG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LLj-SO-Ksp" secondAttribute="trailing" constant="10" id="86q-Fa-nbi"/>
+                            <constraint firstItem="LLj-SO-Ksp" firstAttribute="width" secondItem="Hrn-sc-gPZ" secondAttribute="width" id="9ZD-O0-8Xz"/>
+                            <constraint firstItem="LLj-SO-Ksp" firstAttribute="width" secondItem="RaX-sk-i3h" secondAttribute="height" multiplier="1:1" id="WOu-0H-mOK"/>
+                            <constraint firstItem="RaX-sk-i3h" firstAttribute="centerY" secondItem="sqg-Ja-App" secondAttribute="centerY" id="XAM-gN-zSG"/>
+                            <constraint firstItem="LLj-SO-Ksp" firstAttribute="centerY" secondItem="sqg-Ja-App" secondAttribute="centerY" id="gGG-fG-lAS"/>
+                            <constraint firstItem="Hrn-sc-gPZ" firstAttribute="leading" secondItem="sqg-Ja-App" secondAttribute="leadingMargin" constant="10" id="qxV-bY-3fw"/>
+                            <constraint firstItem="Hrn-sc-gPZ" firstAttribute="centerY" secondItem="sqg-Ja-App" secondAttribute="centerY" id="yx4-QT-mA7"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="我的" id="sdt-rE-4Gn">
                         <barButtonItem key="backBarButtonItem" title=" " id="qOB-Sd-a5d"/>
                     </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CpN-5G-Nc5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
