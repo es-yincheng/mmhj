@@ -26,6 +26,7 @@
             [request setValue:[params objectForYCKey:[keys objectAtYCIndex:i]] forKey:[keys objectAtYCIndex:i]];
         }
     }
+
     //根据request生成对应的NSURLSessionTask
     NSURLSessionTask *task = [manager dataTaskWithRequest:request completionHandler:^(NSURLResponse * _Nonnull response, id  _Nullable responseObject, NSError * _Nullable error) {
         if (error) {

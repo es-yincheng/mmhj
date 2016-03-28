@@ -9,14 +9,16 @@
 #import "HomeVC.h"
 #import "Banner.h"
 #import "TempViewController.h"
+#import "ProductsCell.h"
 
-@interface HomeVC ()<BannerDelegate>
+@interface HomeVC ()<BannerDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
 {
     UIPageControl *pageView_;
 }
 @property (nonatomic, strong) Banner *banner;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) NSArray *ActivitysArray;
+@property (nonatomic, strong) UICollectionView *productsCollectinoView;
 @end
 
 @implementation HomeVC
@@ -40,6 +42,7 @@
     NSLog(@"添加ui！");
     [self.view addSubview:self.banner];
     [self createActivitys:self.ActivitysArray];
+    [self.view addSubview:self.productsCollectinoView];
 }
 
 -(void)setFrame
@@ -55,12 +58,46 @@
     NSLog(@"%@",self.title);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -(void)createActivitys:(NSArray*)activitysArray
 {
     for (int i=0; i<activitysArray.count; i++) {
         NSDictionary *dict = [activitysArray objectAtYCIndex:i];
         UIButton *bt = [[UIButton alloc] initWithFrame:CGRectMake(SCRENW/activitysArray.count*i, NAVH+260*SCRENW/640, SCRENW/activitysArray.count, SCRENW/activitysArray.count*9/10)];
-        [bt setBackgroundImage:[UIImage imageNamed:[dict objectForYCKey:@"pic"]] forState:UIControlStateNormal];
+//        [bt setBackgroundImage:[UIImage imageNamed:[dict objectForYCKey:@"pic"]] forState:UIControlStateNormal];
+        [bt setImage:[UIImage imageNamed:[dict objectForKey:@"pic"]] forState:UIControlStateNormal];
 //        [bt setTitle:[dict objectForYCKey:@"name"] forState:UIControlStateNormal];
         UILabel *nameLb = [[UILabel alloc] initWithFrame:CGRectMake(SCRENW/activitysArray.count*i, CGRectGetMaxY(bt.frame), SCRENW/activitysArray.count, 30)];
         nameLb.text = [dict objectForYCKey:@"name"];
@@ -78,6 +115,26 @@
 }
 
 #pragma - mark - 实现协议
+//-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+//    return 0;
+//}
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return 4;
+}
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *identifierCell = @"ProductsCell";
+    ProductsCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifierCell forIndexPath:indexPath];
+    cell.image.image = [UIImage imageNamed:@"an_01"];
+    cell.title.text = @"狂送红包！火爆";
+    cell.intro.text = @"单品低至15元！";
+    cell.desc.text = @"双12年终疯抢中！";
+    return cell;
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    
+}
+
 #pragma mark banner相关
 #pragma mark -- 获取广告数据
 - (void)getAdvertisingData{
@@ -174,5 +231,32 @@
         _ActivitysArray = @[@{@"pic":@"near_activity",@"name":@"附件活动"},@{@"name":@"特惠活动",@"pic":@"discount_activity"},@{@"name":@"福利闪购",@"pic":@"quickly_buy"}];
     }
     return _ActivitysArray;
+}
+
+-(UICollectionView *)productsCollectinoView
+{
+    if (!_productsCollectinoView) {
+//        _productsCollectinoView = [[UICollectionView alloc] init];
+//        _productsCollectinoView.delegate = self;
+        
+        
+        //两个collecion
+        CGSize itemSize = CGSizeMake(SCRENW/2, SCRENW/2*0.5-5);
+        UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
+        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        layout.itemSize = itemSize;
+        _productsCollectinoView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, (NAVH+260*SCRENW/640+SCRENW/_ActivitysArray.count*9/10+30), SCRENW, SCRENW/2*1) collectionViewLayout:layout];
+        _productsCollectinoView.backgroundColor = [UIColor whiteColor];
+        _productsCollectinoView.dataSource = self;
+        _productsCollectinoView.delegate = self;
+//        _productsCollectinoView.scrollEnabled = YES;
+//        _productsCollectinoView.pagingEnabled = YES;
+//        _productsCollectinoView.showsHorizontalScrollIndicator = NO;
+        _productsCollectinoView.tag =1;
+        [_productsCollectinoView registerClass:[ProductsCell class] forCellWithReuseIdentifier:@"ProductsCell"];
+//        _productsCollectinoView.userInteractionEnabled = YES;
+//        [View2 addSubview:_userCollection];
+    }
+    return _productsCollectinoView;
 }
 @end
