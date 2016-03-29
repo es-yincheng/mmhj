@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E06337F1CAA5AE300DE31B5 /* Part2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E06337E1CAA5AE300DE31B5 /* Part2ViewController.m */; };
+		4E0633831CAA5B1E00DE31B5 /* YCBanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0633821CAA5B1E00DE31B5 /* YCBanner.m */; };
+		4E0633871CAA623100DE31B5 /* Part2Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0633861CAA623100DE31B5 /* Part2Model.m */; };
+		4E0633AD1CAA778E00DE31B5 /* Part2Banner.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0633AC1CAA778E00DE31B5 /* Part2Banner.m */; };
+		4E0633B11CAA7E8800DE31B5 /* YCCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E0633B01CAA7E8800DE31B5 /* YCCollectionView.m */; };
+		4E13105A1CAA16BC0043F1B6 /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1310591CAA16BC0043F1B6 /* MyViewController.m */; };
 		4E1BB6561C99527100A17C22 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1BB6551C99527100A17C22 /* main.m */; };
 		4E1BB6591C99527100A17C22 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1BB6581C99527100A17C22 /* AppDelegate.m */; };
 		4E1BB65C1C99527100A17C22 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1BB65B1C99527100A17C22 /* ViewController.m */; };
@@ -77,6 +83,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E06337D1CAA5AE300DE31B5 /* Part2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Part2ViewController.h; sourceTree = "<group>"; };
+		4E06337E1CAA5AE300DE31B5 /* Part2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Part2ViewController.m; sourceTree = "<group>"; };
+		4E0633811CAA5B1E00DE31B5 /* YCBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = YCBanner.h; path = ../../../viewController/part2/view/YCBanner.h; sourceTree = "<group>"; };
+		4E0633821CAA5B1E00DE31B5 /* YCBanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = YCBanner.m; path = ../../../viewController/part2/view/YCBanner.m; sourceTree = "<group>"; };
+		4E0633851CAA623100DE31B5 /* Part2Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Part2Model.h; sourceTree = "<group>"; };
+		4E0633861CAA623100DE31B5 /* Part2Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Part2Model.m; sourceTree = "<group>"; };
+		4E0633AB1CAA778E00DE31B5 /* Part2Banner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Part2Banner.h; sourceTree = "<group>"; };
+		4E0633AC1CAA778E00DE31B5 /* Part2Banner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Part2Banner.m; sourceTree = "<group>"; };
+		4E0633AF1CAA7E8800DE31B5 /* YCCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YCCollectionView.h; sourceTree = "<group>"; };
+		4E0633B01CAA7E8800DE31B5 /* YCCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YCCollectionView.m; sourceTree = "<group>"; };
+		4E1310581CAA16BC0043F1B6 /* MyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
+		4E1310591CAA16BC0043F1B6 /* MyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 		4E1BB6511C99527100A17C22 /* mmhj.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mmhj.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E1BB6551C99527100A17C22 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4E1BB6571C99527100A17C22 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -179,6 +197,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E0633801CAA5AF100DE31B5 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				4E0633AB1CAA778E00DE31B5 /* Part2Banner.h */,
+				4E0633AC1CAA778E00DE31B5 /* Part2Banner.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		4E0633841CAA621900DE31B5 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				4E0633851CAA623100DE31B5 /* Part2Model.h */,
+				4E0633861CAA623100DE31B5 /* Part2Model.m */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		4E0633AE1CAA7C2000DE31B5 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				4E0633AF1CAA7E8800DE31B5 /* YCCollectionView.h */,
+				4E0633B01CAA7E8800DE31B5 /* YCCollectionView.m */,
+			);
+			path = CollectionView;
+			sourceTree = "<group>";
+		};
 		4E1BB6481C99527000A17C22 = {
 			isa = PBXGroup;
 			children = (
@@ -295,6 +340,7 @@
 		4E2BF27B1C9A870D002ED89B /* YCUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				4E0633AE1CAA7C2000DE31B5 /* CollectionView */,
 				4E2BF27C1C9A8721002ED89B /* Banner */,
 			);
 			path = YCUIKit;
@@ -303,6 +349,8 @@
 		4E2BF27C1C9A8721002ED89B /* Banner */ = {
 			isa = PBXGroup;
 			children = (
+				4E0633811CAA5B1E00DE31B5 /* YCBanner.h */,
+				4E0633821CAA5B1E00DE31B5 /* YCBanner.m */,
 				4E2BF27D1C9A8734002ED89B /* Banner.h */,
 				4E2BF27E1C9A8734002ED89B /* Banner.m */,
 			);
@@ -393,6 +441,10 @@
 		4EBCFCF71CA8FF160057C6E3 /* part2 */ = {
 			isa = PBXGroup;
 			children = (
+				4E0633841CAA621900DE31B5 /* model */,
+				4E0633801CAA5AF100DE31B5 /* view */,
+				4E06337D1CAA5AE300DE31B5 /* Part2ViewController.h */,
+				4E06337E1CAA5AE300DE31B5 /* Part2ViewController.m */,
 			);
 			path = part2;
 			sourceTree = "<group>";
@@ -407,6 +459,8 @@
 		4EBCFCF91CA8FF160057C6E3 /* part4 */ = {
 			isa = PBXGroup;
 			children = (
+				4E1310581CAA16BC0043F1B6 /* MyViewController.h */,
+				4E1310591CAA16BC0043F1B6 /* MyViewController.m */,
 			);
 			path = part4;
 			sourceTree = "<group>";
@@ -683,18 +737,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E0633831CAA5B1E00DE31B5 /* YCBanner.m in Sources */,
+				4E0633871CAA623100DE31B5 /* Part2Model.m in Sources */,
+				4E06337F1CAA5AE300DE31B5 /* Part2ViewController.m in Sources */,
 				4E2BF2741C9A5C2D002ED89B /* NSDictionary+YC.m in Sources */,
 				4E2BF28B1C9A8A55002ED89B /* BaseViewController.m in Sources */,
 				4E1BB65C1C99527100A17C22 /* ViewController.m in Sources */,
+				4E0633B11CAA7E8800DE31B5 /* YCCollectionView.m in Sources */,
 				4EBCFD021CA8FF870057C6E3 /* HomeData.m in Sources */,
 				4EBCFCFA1CA8FF160057C6E3 /* HomeVC.m in Sources */,
 				4EBCFD061CA9066A0057C6E3 /* ProductsCell.m in Sources */,
 				4E1BB6591C99527100A17C22 /* AppDelegate.m in Sources */,
+				4E0633AD1CAA778E00DE31B5 /* Part2Banner.m in Sources */,
 				4E2BF27F1C9A8734002ED89B /* Banner.m in Sources */,
 				4EBCFCFB1CA8FF160057C6E3 /* TempViewController.m in Sources */,
 				4E2BF23A1C9A53E9002ED89B /* Network.m in Sources */,
 				4E2BF27A1C9A8448002ED89B /* NSArray+YC.m in Sources */,
 				4E1BB6561C99527100A17C22 /* main.m in Sources */,
+				4E13105A1CAA16BC0043F1B6 /* MyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

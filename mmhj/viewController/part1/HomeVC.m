@@ -95,19 +95,23 @@
 {
     for (int i=0; i<activitysArray.count; i++) {
         NSDictionary *dict = [activitysArray objectAtYCIndex:i];
-        UIButton *bt = [[UIButton alloc] initWithFrame:CGRectMake(SCRENW/activitysArray.count*i, NAVH+260*SCRENW/640, SCRENW/activitysArray.count, SCRENW/activitysArray.count*9/10)];
+        UIButton *bt = [[UIButton alloc] initWithFrame:CGRectMake(SCRENW/activitysArray.count*i+10, NAVH+260*SCRENW/640+10, (SCRENW-60)/activitysArray.count, (SCRENW-60)/activitysArray.count*9/10)];
         //        [bt setBackgroundImage:[UIImage imageNamed:[dict objectForYCKey:@"pic"]] forState:UIControlStateNormal];
         [bt setImage:[UIImage imageNamed:[dict objectForKey:@"pic"]] forState:UIControlStateNormal];
         //        [bt setTitle:[dict objectForYCKey:@"name"] forState:UIControlStateNormal];
-        UILabel *nameLb = [[UILabel alloc] initWithFrame:CGRectMake(SCRENW/activitysArray.count*i, CGRectGetMaxY(bt.frame), SCRENW/activitysArray.count, 30)];
+        UILabel *nameLb = [[UILabel alloc] initWithFrame:CGRectMake(SCRENW/activitysArray.count*i+10, CGRectGetMaxY(bt.frame), (SCRENW-60)/activitysArray.count, 30)];
         nameLb.text = [dict objectForYCKey:@"name"];
         nameLb.textAlignment = NSTextAlignmentCenter;
         nameLb.font = [UIFont systemFontOfSize:22 weight:0.1];
+        nameLb.textColor = [UIColor grayColor];
         bt.tag = i;
         [bt addTarget:self action:@selector(selectActivitys:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:nameLb];
         [self.view addSubview:bt];
     }
+    UILabel *xline = [[UILabel alloc] initWithFrame:CGRectMake(0, NAVH+260*SCRENW/640+10+30+(SCRENW-60)/activitysArray.count*9/10+10, SCRENW, 20)];
+    xline.backgroundColor = [UIColor colorWithWhite:0.888 alpha:1.000];
+    [self.view addSubview:xline];
 }
 
 -(IBAction)selectActivitys:(UIButton*)sender{
@@ -249,7 +253,7 @@
         UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         layout.itemSize = itemSize;
-        _productsCollectinoView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, (NAVH+260*SCRENW/640+SCRENW/_ActivitysArray.count*9/10+30), SCRENW, SCRENW/2*1) collectionViewLayout:layout];
+        _productsCollectinoView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, (NAVH+260*SCRENW/640+SCRENW/_ActivitysArray.count*9/10+30+30), SCRENW, SCRENW/2*1) collectionViewLayout:layout];
         _productsCollectinoView.backgroundColor = [UIColor whiteColor];
         _productsCollectinoView.dataSource = self;
         _productsCollectinoView.delegate = self;
