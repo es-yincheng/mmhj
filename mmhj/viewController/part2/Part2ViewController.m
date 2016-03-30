@@ -9,6 +9,8 @@
 #import "Part2ViewController.h"
 #import "Part2Model.h"
 #import "Part2Banner.h"
+#import "Part2CollectionView.h"
+//#import "ProductsCell.h"
 
 @interface Part2ViewController ()
 
@@ -24,6 +26,11 @@
 
     Part2Banner *banner = [[Part2Banner alloc] initWithFrame:CGRectMake(0, NAVH, SCRENW, 260*SCRENW/640) images:images];
     [self.view addSubview:banner];
+
+
+    NSArray* dataSource = [p2Model getCollectionDataSource];
+    Part2CollectionView *collection = [[Part2CollectionView alloc] initWithFrame:CGRectMake(0, SCRENH-0.8*SCRENW, SCRENW, 0.8*SCRENW) delegate:self dataSource:dataSource Cell:@"ProductsCell" layOut:CGSizeMake(50, 50)];
+    [self.view addSubview:collection];
 }
 
 - (void)didReceiveMemoryWarning {

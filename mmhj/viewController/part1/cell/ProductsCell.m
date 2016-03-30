@@ -14,8 +14,11 @@
     if (self) {
         _image = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.height, self.frame.size.height)];
         [self addSubview:_image];
-        
-        _title = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_image.frame), _image.frame.origin.y, SCRENW/2-_image.frame.size.width, 20)];
+
+
+        NSLog(@"cell: %f , %f",self.frame.size.width,self.frame.size.height);
+
+        _title = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_image.frame), _image.frame.origin.y, frame.size.width-_image.frame.size.width, 20)];
         _title.numberOfLines = 0;
         _title.font = [UIFont systemFontOfSize:10];
         [self addSubview:_title];

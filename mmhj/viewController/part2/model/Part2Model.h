@@ -10,4 +10,5 @@
 
 @interface Part2Model : NSObject
 -(NSArray*)getBannerImages;
+-(NSArray*)getCollectionDataSource;
 @end

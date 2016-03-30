@@ -9,5 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @interface YCCollectionView : UIView<UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@property(nonatomic, copy) NSString* cellName;
+@property(nonatomic, strong) NSArray* dataSource;
+//@property(nonatomic, strong) id delegate;
 
+
+-(instancetype)initWithFrame:(CGRect)frame
+                    delegate:(id)delegate
+                  dataSource:(NSArray*)dataSource
+                        Cell:(NSString*)cell
+                      layOut:(CGSize)itemsize;
 @end

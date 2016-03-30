@@ -15,8 +15,9 @@
 {
     UIPageControl *pageView_;
 }
+@property (nonatomic, strong) UIScrollView *baseView;
 @property (nonatomic, strong) Banner *banner;
-@property (nonatomic, strong) UIScrollView *scrollView;
+//@property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) NSArray *ActivitysArray;
 @property (nonatomic, strong) UICollectionView *productsCollectinoView;
 @end
@@ -25,7 +26,10 @@
 
 #pragma - mark 重写父类方法
 - (void)viewDidLoad {
+    NSLog(@"%f",SCRENH);
     [super viewDidLoad];
+
+
     NSLog(@"start!");
 }
 
@@ -40,6 +44,7 @@
 -(void)addUI
 {
     NSLog(@"添加ui！");
+    self.view = self.baseView;
     [self.view addSubview:self.banner];
     [self createActivitys:self.ActivitysArray];
     [self.view addSubview:self.productsCollectinoView];
@@ -48,7 +53,7 @@
 -(void)setFrame
 {
     NSLog(@"摆放ui！");
-    self.banner.frame = CGRectMake(0, NAVH, SCRENW, 260*SCRENW/640);
+    self.banner.frame = CGRectMake(0, 0, SCRENW, 260*SCRENW/640);
     [self getAdvertisingData];
 }
 
@@ -95,21 +100,21 @@
 {
     for (int i=0; i<activitysArray.count; i++) {
         NSDictionary *dict = [activitysArray objectAtYCIndex:i];
-        UIButton *bt = [[UIButton alloc] initWithFrame:CGRectMake(SCRENW/activitysArray.count*i+10, NAVH+260*SCRENW/640+10, (SCRENW-60)/activitysArray.count, (SCRENW-60)/activitysArray.count*9/10)];
+        UIButton *bt = [[UIButton alloc] initWithFrame:CGRectMake(SCRENW/activitysArray.count*i+10, 260*SCRENW/640+10, (SCRENW-60)/activitysArray.count, (SCRENW-60)/activitysArray.count*9/10)];
         //        [bt setBackgroundImage:[UIImage imageNamed:[dict objectForYCKey:@"pic"]] forState:UIControlStateNormal];
         [bt setImage:[UIImage imageNamed:[dict objectForKey:@"pic"]] forState:UIControlStateNormal];
         //        [bt setTitle:[dict objectForYCKey:@"name"] forState:UIControlStateNormal];
         UILabel *nameLb = [[UILabel alloc] initWithFrame:CGRectMake(SCRENW/activitysArray.count*i+10, CGRectGetMaxY(bt.frame), (SCRENW-60)/activitysArray.count, 30)];
         nameLb.text = [dict objectForYCKey:@"name"];
         nameLb.textAlignment = NSTextAlignmentCenter;
-        nameLb.font = [UIFont systemFontOfSize:22 weight:0.1];
+        nameLb.font = [UIFont systemFontOfSize:18 weight:0.1];
         nameLb.textColor = [UIColor grayColor];
         bt.tag = i;
         [bt addTarget:self action:@selector(selectActivitys:) forControlEvents:UIControlEventTouchUpInside];
         [self.view addSubview:nameLb];
         [self.view addSubview:bt];
     }
-    UILabel *xline = [[UILabel alloc] initWithFrame:CGRectMake(0, NAVH+260*SCRENW/640+10+30+(SCRENW-60)/activitysArray.count*9/10+10, SCRENW, 20)];
+    UILabel *xline = [[UILabel alloc] initWithFrame:CGRectMake(0, 260*SCRENW/640+10+30+(SCRENW-60)/activitysArray.count*9/10+10, SCRENW, 20)];
     xline.backgroundColor = [UIColor colorWithWhite:0.888 alpha:1.000];
     [self.view addSubview:xline];
 }
@@ -211,6 +216,18 @@
 }
 
 #pragma - mark - 懒加载
+-(UIScrollView *)baseView{
+    if (!_baseView) {
+        _baseView = [[UIScrollView alloc] init];
+        _baseView.backgroundColor = [UIColor whiteColor];
+        _baseView.contentSize = CGSizeMake(SCRENW, SCRENW*667.00/375.00-TABBAR-NAVH);
+        NSLog(@"%f",_baseView.contentSize.height);
+//        NSLog(@"view：%@ :",_baseView.contentSize.with);
+//        self.view = _baseView;
+    }
+    return _baseView;
+}
+
 -(Banner *)banner
 {
     if (!_banner) {
@@ -221,14 +238,6 @@
         _banner.backgroundColor = [UIColor redColor];
     }
     return _banner;
-}
-
--(UIScrollView *)scrollView
-{
-    if (!_scrollView) {
-        _scrollView = [[UIScrollView alloc] init];
-    }
-    return _scrollView;
 }
 
 -(NSArray *)ActivitysArray
@@ -253,11 +262,11 @@
         UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         layout.itemSize = itemSize;
-        _productsCollectinoView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, (NAVH+260*SCRENW/640+SCRENW/_ActivitysArray.count*9/10+30+30), SCRENW, SCRENW/2*1) collectionViewLayout:layout];
+        _productsCollectinoView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, (260*SCRENW/640+SCRENW/_ActivitysArray.count*9/10+30+30), SCRENW, SCRENW/2*1) collectionViewLayout:layout];
         _productsCollectinoView.backgroundColor = [UIColor whiteColor];
         _productsCollectinoView.dataSource = self;
         _productsCollectinoView.delegate = self;
-        //        _productsCollectinoView.scrollEnabled = YES;
+                _productsCollectinoView.scrollEnabled = NO;
         //        _productsCollectinoView.pagingEnabled = YES;
         //        _productsCollectinoView.showsHorizontalScrollIndicator = NO;
         _productsCollectinoView.tag =1;

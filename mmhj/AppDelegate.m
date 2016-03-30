@@ -17,6 +17,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    NSLog(@"屏幕尺寸：w=%f,h=%f,s=%f",SCRENW,SCRENH,SCRENH/SCRENW);
     return YES;
 }
 

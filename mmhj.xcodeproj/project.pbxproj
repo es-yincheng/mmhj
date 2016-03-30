@@ -21,6 +21,8 @@
 		4E1BB6641C99527100A17C22 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E1BB6621C99527100A17C22 /* LaunchScreen.storyboard */; };
 		4E1BB66F1C99527200A17C22 /* mmhjTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1BB66E1C99527200A17C22 /* mmhjTests.m */; };
 		4E1BB67A1C99527200A17C22 /* mmhjUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1BB6791C99527200A17C22 /* mmhjUITests.m */; };
+		4E1D5C2F1CAB5DBA00932796 /* Part2CollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1D5C2E1CAB5DBA00932796 /* Part2CollectionView.m */; };
+		4E1D5C6F1CAB96CA00932796 /* ProductViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1D5C6E1CAB96CA00932796 /* ProductViewController.m */; };
 		4E2BF23A1C9A53E9002ED89B /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2BF2391C9A53E9002ED89B /* Network.m */; };
 		4E2BF2741C9A5C2D002ED89B /* NSDictionary+YC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2BF2731C9A5C2D002ED89B /* NSDictionary+YC.m */; };
 		4E2BF27A1C9A8448002ED89B /* NSArray+YC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2BF2791C9A8448002ED89B /* NSArray+YC.m */; };
@@ -111,6 +113,10 @@
 		4E1BB6751C99527200A17C22 /* mmhjUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mmhjUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E1BB6791C99527200A17C22 /* mmhjUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = mmhjUITests.m; sourceTree = "<group>"; };
 		4E1BB67B1C99527200A17C22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E1D5C2D1CAB5DBA00932796 /* Part2CollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Part2CollectionView.h; sourceTree = "<group>"; };
+		4E1D5C2E1CAB5DBA00932796 /* Part2CollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Part2CollectionView.m; sourceTree = "<group>"; };
+		4E1D5C6D1CAB96CA00932796 /* ProductViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProductViewController.h; sourceTree = "<group>"; };
+		4E1D5C6E1CAB96CA00932796 /* ProductViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProductViewController.m; sourceTree = "<group>"; };
 		4E2BF2381C9A53E9002ED89B /* Network.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
 		4E2BF2391C9A53E9002ED89B /* Network.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Network.m; sourceTree = "<group>"; };
 		4E2BF2691C9A59D6002ED89B /* NSLogDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSLogDefine.h; sourceTree = "<group>"; };
@@ -202,6 +208,8 @@
 			children = (
 				4E0633AB1CAA778E00DE31B5 /* Part2Banner.h */,
 				4E0633AC1CAA778E00DE31B5 /* Part2Banner.m */,
+				4E1D5C2D1CAB5DBA00932796 /* Part2CollectionView.h */,
+				4E1D5C2E1CAB5DBA00932796 /* Part2CollectionView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -500,6 +508,8 @@
 			children = (
 				4EBCFD041CA9066A0057C6E3 /* ProductsCell.h */,
 				4EBCFD051CA9066A0057C6E3 /* ProductsCell.m */,
+				4E1D5C6D1CAB96CA00932796 /* ProductViewController.h */,
+				4E1D5C6E1CAB96CA00932796 /* ProductViewController.m */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -739,6 +749,7 @@
 			files = (
 				4E0633831CAA5B1E00DE31B5 /* YCBanner.m in Sources */,
 				4E0633871CAA623100DE31B5 /* Part2Model.m in Sources */,
+				4E1D5C6F1CAB96CA00932796 /* ProductViewController.m in Sources */,
 				4E06337F1CAA5AE300DE31B5 /* Part2ViewController.m in Sources */,
 				4E2BF2741C9A5C2D002ED89B /* NSDictionary+YC.m in Sources */,
 				4E2BF28B1C9A8A55002ED89B /* BaseViewController.m in Sources */,
@@ -748,6 +759,7 @@
 				4EBCFCFA1CA8FF160057C6E3 /* HomeVC.m in Sources */,
 				4EBCFD061CA9066A0057C6E3 /* ProductsCell.m in Sources */,
 				4E1BB6591C99527100A17C22 /* AppDelegate.m in Sources */,
+				4E1D5C2F1CAB5DBA00932796 /* Part2CollectionView.m in Sources */,
 				4E0633AD1CAA778E00DE31B5 /* Part2Banner.m in Sources */,
 				4E2BF27F1C9A8734002ED89B /* Banner.m in Sources */,
 				4EBCFCFB1CA8FF160057C6E3 /* TempViewController.m in Sources */,
