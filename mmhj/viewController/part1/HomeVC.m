@@ -10,6 +10,7 @@
 #import "Banner.h"
 #import "TempViewController.h"
 #import "ProductsCell.h"
+#import "ProductViewController.h"
 
 @interface HomeVC ()<BannerDelegate,UICollectionViewDelegate,UICollectionViewDataSource>
 {
@@ -141,7 +142,8 @@
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-
+    ProductViewController *productVC = [[ProductViewController alloc] init];
+    [self.navigationController pushViewController:productVC animated:YES];
 }
 
 #pragma mark banner相关

@@ -1,5 +1,5 @@
 //
-//  ProductViewController.h
+//  ProductListViewController.h
 //  mmhj
 //
 //  Created by cheng yin on 16/3/30.
@@ -8,6 +8,6 @@
 
 #import "BaseViewController.h"
 
-@interface ProductViewController : BaseViewController
+@interface ProductListViewController : BaseViewController
 
 @end
